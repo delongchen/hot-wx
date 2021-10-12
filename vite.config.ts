@@ -11,5 +11,10 @@ export default defineConfig({
       resolvers: [ AntDesignVueResolver() ],
       dts: true
     })
-  ]
+  ],
+  server:{
+    proxy: {
+      '/user': '222.221.169.74:20090/user'
+    }
+  }
 })

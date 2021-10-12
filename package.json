@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@types/node": "^16.10.3",
+    "ant-design-vue": "^2.2.8",
     "toml": "^3.0.0",
     "vue": "^3.2.16"
   },

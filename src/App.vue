@@ -7,8 +7,7 @@ import HelloWorld from './components/HelloWorld.vue'
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
   <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
-  <a-button>aaa</a-button>
-  <router-view/>
+  <a-button>aaaaaa</a-button>
 </template>
 
 <style>

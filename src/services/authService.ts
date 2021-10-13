@@ -1,6 +1,6 @@
 import {GenerateTokenOrRegisterParams} from "../types/User";
 import {ResMsg} from "../types/ResMsg";
-import {request} from "../utils/requests";
+import request from "../utils/request";
 
 /**
  * @DECS:

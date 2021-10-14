@@ -16,13 +16,16 @@ export default defineConfig({
     css: {
         preprocessorOptions: {
             less: {
+                modifyVars:{
+                    'primary-color': '#7546c9',
+                },
                 javascriptEnabled: true
             }
         }
     },
     server: {
         proxy: {
-            '/user': '222.221.169.74:20090/user'
+            '/user': 'https://r.cdl.pub:20090/user'
         }
     }
 })

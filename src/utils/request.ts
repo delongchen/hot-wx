@@ -33,7 +33,8 @@ request.interceptors.request.use((url, options) => {
         headers['Content-Type'] = 'application/x-www-form-urlencoded'
     }
     if(options.method?.toLowerCase() === 'post'){
-        options.data = JSON.stringify(options.data)
+        // 已自动完成
+        // options.data = JSON.stringify(options.data)
     }
     return {
         url, options:{...options, headers:{...headers, ...options.headers}, interceptors: true}

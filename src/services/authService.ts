@@ -39,7 +39,7 @@ export function getUserInfo() {
 }
 
 export function loginRequest(data: GenerateTokenOrRegisterParams) {
-    return request<ResMsg>('/user/register', {
+    return request<ResMsg>('/user/login', {
         method: 'POST',
         data
     });

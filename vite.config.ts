@@ -25,7 +25,7 @@ export default defineConfig({
     },
     server: {
         proxy: {
-            '/user': 'https://r.cdl.pub:20090/user'
+            '/user': 'https://r.cdl.pub:20090'
         }
     }
 })

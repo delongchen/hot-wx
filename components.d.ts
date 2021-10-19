@@ -10,6 +10,7 @@ declare module 'vue' {
     AInput: typeof import('ant-design-vue/es')['Input']
     APageHeader: typeof import('ant-design-vue/es')['PageHeader']
     ARow: typeof import('ant-design-vue/es')['Row']
+    AStatistic: typeof import('ant-design-vue/es')['Statistic']
     ATabPane: typeof import('ant-design-vue/es')['TabPane']
     ATabs: typeof import('ant-design-vue/es')['Tabs']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']

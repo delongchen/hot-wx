@@ -1,8 +1,20 @@
 <template>
   <a-page-header
     title="User Name"
-    style="border: 1px solid rgb(235, 237, 240)"
+    style="border: 1px solid rgb(235, 237, 240); margin-bottom: 10px;"
   >
+    <a-row type="flex">
+      <a-statistic title="Status" value="Pending" />
+      <a-statistic
+          title="Price"
+          prefix="$"
+          :value="568.08"
+          :style="{
+            margin: '0 32px',
+          }"
+      />
+      <a-statistic title="Balance" prefix="$" :value="3345.08" />
+    </a-row>
     <a-row>
       <div style="margin-left: 20px">
         <template v-for="item in children">

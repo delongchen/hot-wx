@@ -25,7 +25,12 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/user': 'https://wx.cdl.pub:20090'
+      "^(\/user|\/avdb|\/av)": {
+        target:'https://wx.cdl.pub:20090',
+        changeOrigin:true
+      }
+      // '/user': 'https://wx.cdl.pub:20090',
+      // '/avdb': 'https://wx.cdl.pub:20090'
     }
   }
 })

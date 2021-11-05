@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="login-container">
     <main>
       <div class="auth-form px-3">
         <div class="auth-form-header">
@@ -10,7 +10,7 @@
                 <a-input style="border-radius: 6px" v-model:value="formState.userName"/>
               </a-form-item>
               <a-form-item label="Password" :="validateInfos.psw">
-                <a-input style="border-radius: 6px" v-model:value="formState.psw"/>
+                <a-input-password style="border-radius: 6px" v-model:value="formState.psw"/>
               </a-form-item>
             </a-form>
             <a-button :loading="loading" @click="onSubmit" class="sign-in-button" type="primary">Sign in</a-button>
@@ -29,6 +29,7 @@
 import {defineComponent, reactive, ref, toRaw, UnwrapRef} from "vue";
 import {Form} from "ant-design-vue";
 import {login} from "../../services/authService";
+import { useRouter } from "vue-router";
 
 export default defineComponent({
   setup() {
@@ -36,6 +37,7 @@ export default defineComponent({
       userName: '',
       psw: '',
     });
+    const router = useRouter();
     const rulesRef = reactive({
       userName: [
         {
@@ -58,7 +60,11 @@ export default defineComponent({
     const onSubmit = () => {
       validate().then(() => {
         loading.value = true
-        login(toRaw(formState)).finally(() => {
+        login(toRaw(formState))
+        .then(res => {
+         res.token && router.push('/porn')
+        })
+        .finally(() => {
           loading.value = false
         })
       })
@@ -74,6 +80,10 @@ export default defineComponent({
 </script>
 
 <style lang="less">
+
+.login-container{
+  margin-top: 10%;
+}
 .auth-form {
   width: 340px;
   margin: 0 auto;

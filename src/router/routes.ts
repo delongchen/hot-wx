@@ -12,12 +12,19 @@ const routes: RouteRecordRaw[] = [
   {
     name: 'root',
     path: '/',
-    redirect: '/login'
+    redirect: () => {
+      return {path: '/login'}
+    } 
   },
   {
     name: 'login',
     path: '/login',
     component: () => import('../views/login/Login.vue')
+  },
+  {
+    name: 'porn',
+    path: '/porn',
+    component: () => import('../views/porn/Porn.vue')
   },
   userPageRoutes,
 ]

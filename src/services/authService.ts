@@ -49,9 +49,9 @@ export function login(data: GenerateTokenOrRegisterParams) {
     return loginRequest(data).then((res) => {
         if (res.token) {
             setAuthToken(res.token);
-            setUserInfo(data.userName)
-            return res
+            setUserInfo(data.userName);
         }
+        return res
     }, (e) => {
         return e
     })

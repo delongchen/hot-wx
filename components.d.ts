@@ -8,12 +8,11 @@ declare module 'vue' {
     AForm: typeof import('ant-design-vue/es')['Form']
     AFormItem: typeof import('ant-design-vue/es')['FormItem']
     AInput: typeof import('ant-design-vue/es')['Input']
-    APageHeader: typeof import('ant-design-vue/es')['PageHeader']
-    ARow: typeof import('ant-design-vue/es')['Row']
-    ATabPane: typeof import('ant-design-vue/es')['TabPane']
-    ATabs: typeof import('ant-design-vue/es')['Tabs']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
-    Navigation: typeof import('./src/components/nvigation/Navigation.vue')['default']
+    AInputPassword: typeof import('ant-design-vue/es')['InputPassword']
+    AList: typeof import('ant-design-vue/es')['List']
+    AListItem: typeof import('ant-design-vue/es')['ListItem']
+    HelloWorld: typeof import('D:/code/hot-wx/src/components/HelloWorld.vue')['default']
+    Navigation: typeof import('D:/code/hot-wx/src/components/nvigation/Navigation.vue')['default']
   }
 }
 

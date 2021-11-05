@@ -2,7 +2,7 @@
   <div class="video-card-reco">
     <div class="card-image">
       <picture class="card-cover">
-        <img :src="porn.img" :alt="porn.name" loading="lazy" />
+        <img :src="img" :alt="porn.video" loading="lazy" />
       </picture>
     </div>
     <div class="card-mask">
@@ -14,23 +14,23 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps, defineEmits } from "vue";
+import { defineProps, defineEmits, computed } from "vue";
+import { AvDesc } from "../../../types/AV";
 
-interface Porn {
-  name: string;
-  img: string;
-}
 const {
   porn
-} = defineProps<{ porn: Porn }>();
+} = defineProps<{ porn: AvDesc }>();
 
+const img = computed(() => {
+  return `/av/covers/${porn.hash}.jpg`
+})
 
 
 </script>
 
 <style scoped lang="less">
 .video-card-reco {
-  width: 100%;
+  width: 260px;
   .card-image {
     position: relative;
     padding-top: 56.25%;
@@ -48,6 +48,9 @@ const {
       border-radius: 6px;
       overflow: hidden;
       vertical-align: middle;
+      img{
+        width: 260px;
+      }
     }
   }
   .card-mask {

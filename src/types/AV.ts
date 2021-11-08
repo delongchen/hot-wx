@@ -8,6 +8,6 @@ export interface DirtyAvDesc {
 
 export interface AvDesc extends DirtyAvDesc {
     id: string,
-    performers: string[] | string,
+    performers: string,
     cover: string,
 }

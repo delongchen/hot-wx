@@ -2,12 +2,12 @@
   <div class="video-card-reco">
     <div class="card-image">
       <picture class="card-cover">
-        <img :src="img" :alt="porn.video" loading="lazy" />
+        <img :src="videoImg" :alt="porn.video" loading="lazy" />
       </picture>
     </div>
     <div class="card-mask">
       <div class="card-mask-action">
-        
+        {{ videoName }}
       </div>
     </div>
   </div>
@@ -16,27 +16,30 @@
 <script lang="ts" setup>
 import { defineProps, defineEmits, computed } from "vue";
 import { AvDesc } from "../../../types/AV";
+import { isDev } from "../../../utils/helper";
+import avImg from "../../../assets/avImg.png";
+import { getVideoName } from "./utils";
 
-const {
-  porn
-} = defineProps<{ porn: AvDesc }>();
+const { porn } = defineProps<{ porn: AvDesc }>();
 
-const img = computed(() => {
-  return `/av/covers/${porn.hash}.jpg`
-})
+const videoImg = computed(() =>
+  isDev() ? avImg : `/av/covers/${porn.hash}.jpg`
+);
 
-
+const videoName = computed(() => porn.id ?? getVideoName(porn.video));
 </script>
 
 <style scoped lang="less">
 .video-card-reco {
   width: 260px;
+
   .card-image {
     position: relative;
     padding-top: 56.25%;
     background-color: var(--graph_bg_regular);
     border-radius: 6px;
     z-index: 1;
+
     .card-cover {
       position: absolute;
       top: 0;
@@ -48,21 +51,24 @@ const img = computed(() => {
       border-radius: 6px;
       overflow: hidden;
       vertical-align: middle;
-      img{
+
+      img {
         width: 260px;
       }
     }
   }
+
   .card-mask {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 92%;
     height: 100%;
     z-index: 2;
     opacity: 1;
     transition: all 0.2s linear 0.2s;
     pointer-events: none;
+    margin: 0 11px 0 11px;
     .card-mask-action {
       display: -webkit-flex;
       display: flex;
@@ -71,9 +77,9 @@ const img = computed(() => {
       position: absolute;
       left: 0;
       bottom: 0;
-      padding: 16 px 8 px 6 px;
+      padding: 16px 8px 6px;
       width: 100%;
-      height: 38 px;
+      height: 38px;
       font-size: var(--subtitle-font-size);
       line-height: var(--icon-size);
       color: #fff;
@@ -84,8 +90,8 @@ const img = computed(() => {
       );
       z-index: 2;
       box-sizing: border-box;
-      border-bottom-left-radius: 8 px;
-      border-bottom-right-radius: 8 px;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
     }
   }
 }

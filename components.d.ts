@@ -5,14 +5,15 @@
 declare module 'vue' {
   export interface GlobalComponents {
     AButton: typeof import('ant-design-vue/es')['Button']
+    ACheckableTag: typeof import('ant-design-vue/es')['CheckableTag']
     AForm: typeof import('ant-design-vue/es')['Form']
     AFormItem: typeof import('ant-design-vue/es')['FormItem']
     AInput: typeof import('ant-design-vue/es')['Input']
     AInputPassword: typeof import('ant-design-vue/es')['InputPassword']
     AList: typeof import('ant-design-vue/es')['List']
     AListItem: typeof import('ant-design-vue/es')['ListItem']
-    HelloWorld: typeof import('D:/code/hot-wx/src/components/HelloWorld.vue')['default']
-    Navigation: typeof import('D:/code/hot-wx/src/components/nvigation/Navigation.vue')['default']
+    HelloWorld: typeof import('D:/d/lg/hot-wx/src/components/HelloWorld.vue')['default']
+    Navigation: typeof import('D:/d/lg/hot-wx/src/components/nvigation/Navigation.vue')['default']
   }
 }
 

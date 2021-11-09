@@ -28,7 +28,15 @@ export class AvFilter {
 
   public sizeRange: [number, number];
 
+  public maxSize: number = 0;
+
+  public minSize: number = 0;
+
   public createTimeRange: [number, number];
+
+  public maxCreateTime: number = 0;
+
+  public minCreateTime: number = 0;
 
   private dirtyFilter: boolean;
 
@@ -81,6 +89,10 @@ export class AvFilter {
     this.sizeRange = sizeRange;
     this.createTimeRange = createTimeRange;
     this.dirtyFilter = dirtyFilter;
+    this.minSize = sizeRange[0];
+    this.maxSize = sizeRange[1];
+    this.minCreateTime = createTimeRange[0];
+    this.maxCreateTime = createTimeRange[1];
   }
 
   public filterAvs(avs: (DirtyAvDesc | AvDesc)[]) {
@@ -100,4 +112,23 @@ export class AvFilter {
         av.createTime <= this.createTimeRange[1]
     );
   }
+}
+
+
+const colors: string[] = [
+  'pink', 'red', 'orange', 'green',
+  'cyan', 'blue', 'purple'
+]
+
+export function getRandomColor(index: number): string {
+
+  return colors[index % 7]
+}
+
+
+export const formatSize = (size: number) => {
+  size = (size / (1024 * 1024)) >> 0
+
+  if (size > 1024) return (size / 1024).toFixed(2) + 'GB'
+  return size + 'MB'
 }

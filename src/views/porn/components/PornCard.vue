@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps, defineEmits, computed } from "vue";
+import { computed } from "vue";
 import { AvDesc } from "../../../types/AV";
 import { isDev } from "../../../utils/helper";
 import avImg from "../../../assets/avImg.png";
@@ -23,7 +23,8 @@ import { getVideoName } from "./utils";
 const { porn } = defineProps<{ porn: AvDesc }>();
 
 const videoImg = computed(() =>
-  isDev() ? avImg : `/av/covers/${porn.hash}.jpg`
+  // isDev() ? avImg : `/av/covers/${porn.hash}.jpg`
+  `/av/covers/${porn.hash}.jpg`
 );
 
 const videoName = computed(() => porn.id ?? getVideoName(porn.video));

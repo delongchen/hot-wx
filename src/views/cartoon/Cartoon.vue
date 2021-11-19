@@ -1,5 +1,5 @@
 <template>
-    <a-list :grid="{ gutter: 16, column: 4}" :data-source="cartoonList">
+    <a-list :grid="{ gutter: 16, column: 4}" :data-source="cartoonList" class="cartoon-list">
     <template #renderItem="{ item }">
       <a-list-item>
         <cartoon-card :item="item" />
@@ -26,5 +26,7 @@ const fetchData = () => {
 fetchData();
 </script>
 <style lang="less" scoped>
-
+.cartoon-list{
+  margin: auto;
+}
 </style>

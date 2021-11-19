@@ -5,9 +5,14 @@
  */
 
 export const pages = [
-    {
-        path: "/wx",
-        text: "吴翔",
-        // icon: "project",
-    }
-]
+  {
+    path: "/porn",
+    text: "porn",
+    icon: "VideoCameraTwoTone",
+  },
+  {
+    path: "/cartoon",
+    text: "cartoon",
+    icon: "PictureTwoTone",
+  },
+];

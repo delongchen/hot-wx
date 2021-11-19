@@ -1,5 +1,5 @@
 <template>
-  <a-card class="card" :bodyStyle="noMarginAndPadding">
+  <a-card class="card" :bodyStyle="noMarginAndPadding" @click="clickCard">
     <template #cover>
       <img
         alt="example"
@@ -63,6 +63,11 @@ const noMarginAndPadding = {
 const ellipsis = { rows: 2, expandable: false };
 
 const { item } = defineProps<{ item: EhItem }>();
+const emit = defineEmits<{ (event: "click"): void }>();
+
+const clickCard = () => {
+  emit('click')
+}
 
 const num = computed(() => {
   return {
@@ -74,7 +79,7 @@ const num = computed(() => {
 
 <style lang="less">
 .card {
-  max-width: 200px;
+  // max-width: 200px;
   .ant-descriptions-header {
     margin-bottom: 2px !important;
     font-size: 0.75rem;

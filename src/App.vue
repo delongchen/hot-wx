@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
+import NavigationVue from "./components/nvigation/Navigation.vue";
 import { computed } from "vue";
 import { useRoute } from "vue-router";
 const showNav = computed<boolean>(() => {
@@ -9,23 +10,32 @@ const showNav = computed<boolean>(() => {
 </script>
 
 <template>
-  <router-view v-slot="{ Component }">
-  <transition name="fade">
-    <component :is="Component" />
-  </transition>
-</router-view>
+  <NavigationVue />
+  <div class="content">
+      <router-view v-slot="{ Component }">
+    <transition name="fade">
+      <component :is="Component" />
+    </transition>
+  </router-view>
+  </div>
 </template>
 
 <style lang="less">
 @media screen and (max-with: 1920px) {
-    html, body{
-      font-size: 20px;
-    }
+  html,
+  body {
+    font-size: 20px;
+  }
 }
 @media screen and (max-with: 1080px) {
-    html, body{
-      font-size: 14px;
-    }
+  html,
+  body {
+    font-size: 14px;
+  }
+}
+
+.content{
+  padding: 24px;
 }
 
 #app {
@@ -49,6 +59,6 @@ const showNav = computed<boolean>(() => {
   --avatar-margin-right: 8px;
   --icon-size: 18px;
   --title-padding-right: 16px;
-  --graph_bg_regular: #F1F2F3;
+  --graph_bg_regular: #f1f2f3;
 }
 </style>

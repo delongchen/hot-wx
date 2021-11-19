@@ -3,7 +3,7 @@
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import { computed } from "vue";
 import { useRoute } from "vue-router";
-const showNav = computed<Boolean>(() => {
+const showNav = computed<boolean>(() => {
   return useRoute().name !== "login";
 });
 </script>
@@ -17,6 +17,17 @@ const showNav = computed<Boolean>(() => {
 </template>
 
 <style lang="less">
+@media screen and (max-with: 1920px) {
+    html, body{
+      font-size: 20px;
+    }
+}
+@media screen and (max-with: 1080px) {
+    html, body{
+      font-size: 14px;
+    }
+}
+
 #app {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji";

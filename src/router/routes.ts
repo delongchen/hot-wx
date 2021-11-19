@@ -26,6 +26,14 @@ const routes: RouteRecordRaw[] = [
     path: '/porn',
     component: () => import('../views/porn/Porn.vue')
   },
+  {
+    name: 'cartoon',
+    path: '/cartoon',
+    component: () => import('../views/cartoon/Cartoon.vue'),
+    children:[
+      
+    ],
+  },
   userPageRoutes,
 ]
 export default routes

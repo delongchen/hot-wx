@@ -4,19 +4,27 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    ABadge: typeof import('ant-design-vue/es')['Badge']
     AButton: typeof import('ant-design-vue/es')['Button']
-    ACheckableTag: typeof import('ant-design-vue/es')['CheckableTag']
-    ACollapse: typeof import('ant-design-vue/es')['Collapse']
-    ACollapsePanel: typeof import('ant-design-vue/es')['CollapsePanel']
+    ACard: typeof import('ant-design-vue/es')['Card']
+    ACardMeta: typeof import('ant-design-vue/es')['CardMeta']
+    ACol: typeof import('ant-design-vue/es')['Col']
+    ADescriptions: typeof import('ant-design-vue/es')['Descriptions']
+    ADescriptionsItem: typeof import('ant-design-vue/es')['DescriptionsItem']
     AForm: typeof import('ant-design-vue/es')['Form']
     AFormItem: typeof import('ant-design-vue/es')['FormItem']
     AInput: typeof import('ant-design-vue/es')['Input']
     AInputPassword: typeof import('ant-design-vue/es')['InputPassword']
     AList: typeof import('ant-design-vue/es')['List']
     AListItem: typeof import('ant-design-vue/es')['ListItem']
-    ASlider: typeof import('ant-design-vue/es')['Slider']
-    HelloWorld: typeof import('D:/code/hot-wx/src/components/HelloWorld.vue')['default']
-    Navigation: typeof import('D:/code/hot-wx/src/components/nvigation/Navigation.vue')['default']
+    ARate: typeof import('ant-design-vue/es')['Rate']
+    ARow: typeof import('ant-design-vue/es')['Row']
+    ASpace: typeof import('ant-design-vue/es')['Space']
+    ATypographyParagraph: typeof import('ant-design-vue/es')['TypographyParagraph']
+    Flag: typeof import('D:/d/lg/hot-wx/src/components/flag/Flag.vue')['default']
+    HelloWorld: typeof import('D:/d/lg/hot-wx/src/components/HelloWorld.vue')['default']
+    Navigation: typeof import('D:/d/lg/hot-wx/src/components/nvigation/Navigation.vue')['default']
+    Rate: typeof import('D:/d/lg/hot-wx/src/components/rate/Rate.vue')['default']
   }
 }
 
